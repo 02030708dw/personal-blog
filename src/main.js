@@ -1,9 +1,10 @@
+import "./mock";
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 
 import "./styles/gobal.less";
-
+import "./api/banner";
 import showMessage from "./utils/showMessage";
 Vue.prototype.$showMessage = showMessage;
 // window.showMessage = showMessage;
