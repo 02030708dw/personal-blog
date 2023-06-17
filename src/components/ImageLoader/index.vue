@@ -1,7 +1,13 @@
 <template>
   <div class="image-loader-container">
-    <img v-if="!everythingDone" class="placeholder" :src="placeholder" />
     <img
+      v-if="!everythingDone"
+      class="placeholder"
+      :src="placeholder"
+      loading="lazy"
+    />
+    <img
+      loading="lazy"
       @load="handleLoad"
       :src="src"
       :style="{ opacity: hasOriginSrc, transition: `${duration}ms` }"
@@ -36,6 +42,7 @@ export default {
       return this.originLoaded ? 1 : 0;
     },
   },
+
   methods: {
     handleLoad() {
       this.originLoaded = true;
